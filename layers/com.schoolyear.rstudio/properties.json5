@@ -1,0 +1,28 @@
+{
+  version: 'v2',
+  name: 'com.schoolyear.rstudio',
+  description: "R-studio image",
+  author: {
+    name: 'Schoolyear',
+    email: 'avd@schoolyear.com'
+  },
+  platform_version: "2",
+  network: {
+    http_proxy_whitelist: [
+      "cran.rstudio.com:443",
+      "cran.rstudio.com:80"
+    ],
+  },
+  build_parameters: {
+    rVersion: {
+      description: "Select the version of R to install",
+      enum: ["4.4.1"],
+      default: "4.4.1"
+    },
+    rStudioVersion: {
+      description: "Select the version of R-Studio to install",
+      enum: ["2024.04.2-764"],
+      default: "2024.04.2-764"
+    }
+  }
+}
