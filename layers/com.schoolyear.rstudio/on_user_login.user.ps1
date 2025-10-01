@@ -25,3 +25,43 @@ Set-Content -Path $renvironFilePath -Value $renvironFileContent
 Write-Host "Wrote $renvironFilePath"
 
 # Now our RStudio installation should pick up on our `.Renviron` file and properly use the proxy if it needs to install any extra R packages
+
+# Adding RStudio icon to the taskbar and desktop.
+$targetPath = "C:\Program Files\RStudio\rstudio.exe"
+$desktopPath = [Environment]::GetFolderPath("Desktop")
+$shortcutName = "RStudio.lnk"
+$shortcutPath = Join-Path $desktopPath $shortcutName
+$startMenuPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\$shortcutName"
+$toolsDir = "C:\Tools"
+$pttbPath = Join-Path $toolsDir "pttb.exe"
+# Create shortcut on Desktop
+$WScriptShell = New-Object -ComObject WScript.Shell
+$desktopShortcut = $WScriptShell.CreateShortcut($shortcutPath)
+$desktopShortcut.TargetPath = $targetPath
+$desktopShortcut.WorkingDirectory = Split-Path $targetPath
+$desktopShortcut.IconLocation = "$targetPath, 0"
+$desktopShortcut.Save()
+# Copy shortcut to Start menu
+Copy-Item -Path $shortcutPath -Destination $startMenuPath -Force
+# Pin icon to taskbar using pttb.exe
+Start-Process -FilePath $pttbPath -ArgumentList "`"$targetPath`"" -Wait
+
+# Adding Explorer icon to the taskbar and desktop.
+$targetPath = "C:\Windows\explorer.exe"
+$desktopPath = [Environment]::GetFolderPath("Desktop")
+$shortcutName = "File Explorer.lnk"
+$shortcutPath = Join-Path $desktopPath $shortcutName
+$startMenuPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\$shortcutName"
+$toolsDir = "C:\Tools"
+$pttbPath = Join-Path $toolsDir "pttb.exe"
+# Create File Explorer shortcut on Desktop
+$WScriptShell = New-Object -ComObject WScript.Shell
+$desktopShortcut = $WScriptShell.CreateShortcut($shortcutPath)
+$desktopShortcut.TargetPath = $targetPath
+$desktopShortcut.WorkingDirectory = Split-Path $targetPath
+$desktopShortcut.IconLocation = "$targetPath, 0"
+$desktopShortcut.Save()
+# Adds shortcut to Start menu
+Copy-Item -Path $shortcutPath -Destination $startMenuPath -Force
+# Pin to taskbar using pttb.exe
+Start-Process -FilePath $pttbPath -ArgumentList "`"$targetPath`"" -Wait

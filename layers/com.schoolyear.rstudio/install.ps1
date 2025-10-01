@@ -21,3 +21,8 @@ Write-Host "=== Done with post installation ==="
 Write-Host "=== File association ==="
 & .\install_scripts\file_associations.ps1
 Write-Host "=== Done with file association ==="
+
+Write-Host "=== Install PinToTaskbar tool ==="
+& .\install_scripts\install_tool_pinToTaskbar.ps1
+Write-Host "=== Done with PinToTaskbar tool installation ==="
+
