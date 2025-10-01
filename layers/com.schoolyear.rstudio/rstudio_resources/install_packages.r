@@ -13,7 +13,29 @@ install.packages(c(
     'magrittr',
     'stringi',
     'stringr',
-    'tinytex'
+    'tinytex',
+    'XLConnect',
+    'foreign',
+    'gdata',
+    'ggpubr',
+    'tidyverse',
+    'ggplot',
+    'Kableextra',
+    'readxl',
+    'lsr',
+    'psych',
+    'superpower',
+    'emmeans',
+    'marginaleffects',
+    'car',
+    'lmtest',
+    'gplots',
+    'sciplot',
+    'lme4',
+    'lmertest',
+    'lavaan',
+    'tost',
+	'pwr'
 ), repos="https://cran.rstudio.com")
 
 # Install tinytex, which is necessary for PDF generation
