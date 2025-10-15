@@ -34,7 +34,7 @@ install.packages(c(
     'lme4',
     'lmerTest',
     'lavaan',
-#   'tost',
+    'TOSTER',
 	'pwr'
 ), repos="https://cran.rstudio.com")
 
