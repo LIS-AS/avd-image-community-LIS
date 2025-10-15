@@ -1,6 +1,6 @@
 {
   version: "v2.1",
-  name: "com.tue.python",
+  name: "nl.tue.python",
   description: "Example description: short note on what this layer does",
   author: {
     name: "Dirk van Nunen",

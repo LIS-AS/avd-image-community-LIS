@@ -19,12 +19,12 @@ install.packages(c(
     'gdata',
     'ggpubr',
     'tidyverse',
-    'ggplot',
-    'Kableextra',
+    'ggplot2',
+    'kableExtra',
     'readxl',
     'lsr',
     'psych',
-    'superpower',
+    'Superpower',
     'emmeans',
     'marginaleffects',
     'car',
@@ -32,9 +32,9 @@ install.packages(c(
     'gplots',
     'sciplot',
     'lme4',
-    'lmertest',
+    'lmerTest',
     'lavaan',
-    'tost',
+#   'tost',
 	'pwr'
 ), repos="https://cran.rstudio.com")
 

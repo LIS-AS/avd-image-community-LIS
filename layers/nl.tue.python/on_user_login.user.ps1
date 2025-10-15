@@ -135,3 +135,6 @@ if ($currentPath -notmatch [regex]::Escape($folderToAdd)) {
 } else {
     Write-Output "Folder is already in the user PATH."
 }
+
+#start VSCode to make sure all extentions are loaded and ready for use.
+Start-Process -FilePath C:\VSCode\Code.exe

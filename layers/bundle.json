@@ -1,0 +1,116 @@
+{
+    "version": "v2",
+    "cli_version": "v2.0.17",
+    "layers": [
+        {
+            "version": "v2",
+            "name": "com.schoolyear.avd",
+            "description": "The default built-in Schoolyear layer, included in every bundle",
+            "author": {
+                "name": "Schoolyear",
+                "email": "avd@schoolyear.com"
+            },
+            "network": {
+                "http_proxy_whitelist": [
+                    "*.prod.warm.ingest.monitor.core.windows.net:443",
+                    "catalogartifact.azureedge.net:443",
+                    "gcs.prod.monitoring.core.windows.net:443",
+                    "azkms.core.windows.net:1688",
+                    "mrsglobalsteus2prod.blob.core.windows.net:443",
+                    "wvdportalstorageblob.blob.core.windows.net:443",
+                    "oneocsp.microsoft.com:80",
+                    "pas.windows.net:443",
+                    "*.events.data.microsoft.com:443",
+                    "www.msftconnecttest.com:80",
+                    "*.prod.do.dsp.mp.microsoft.com:443",
+                    "*.digicert.com:80",
+                    "*.azure-dns.com:443",
+                    "*.azure-dns.net:443",
+                    "*.eh.servicebus.windows.net:443",
+                    "go.microsoft.com:443",
+                    "*.auth.microsoft.com:443",
+                    "*.msftidentity.com:443",
+                    "*.msidentity.com:443",
+                    "account.activedirectory.windowsazure.com:443",
+                    "accounts.accesscontrol.windows.net:443",
+                    "adminwebservice.microsoftonline.com:443",
+                    "api.passwordreset.microsoftonline.com:443",
+                    "autologon.microsoftazuread-sso.com:443",
+                    "becws.microsoftonline.com:443",
+                    "ccs.login.microsoftonline.com:443",
+                    "clientconfig.microsoftonline-p.net:443",
+                    "companymanager.microsoftonline.com:443",
+                    "device.login.microsoftonline.com:443",
+                    "graph.windows.net:443",
+                    "login-us.microsoftonline.com:443",
+                    "login.microsoft.com:443",
+                    "login.microsoftonline-p.com:443",
+                    "login.microsoftonline.com:443",
+                    "login.windows.net:443",
+                    "logincert.microsoftonline.com:443",
+                    "loginex.microsoftonline.com:443",
+                    "nexus.microsoftonline-p.com:443",
+                    "passwordreset.microsoftonline.com:443",
+                    "provisioningapi.microsoftonline.com:443",
+                    "*.hip.live.com:443",
+                    "*.microsoftonline-p.com:443",
+                    "*.microsoftonline.com:443",
+                    "*.msauth.net:443",
+                    "*.msauthimages.net:443",
+                    "*.msecnd.net:443",
+                    "*.msftauth.net:443",
+                    "*.msftauthimages.net:443",
+                    "*.phonefactor.net:443",
+                    "enterpriseregistration.windows.net:443",
+                    "policykeyservice.dc.ad.msft.net:443"
+                ]
+            },
+            "platform_version": "2",
+            "build_parameters": {
+                "environment": {
+                    "description": "Which Schoolyear environment to build the image for.",
+                    "enum": [
+                        "Development",
+                        "Testing",
+                        "Beta",
+                        "Production"
+                    ],
+                    "default": "Production"
+                }
+            }
+        },
+        {
+            "version": "v2.1",
+            "name": "nl.tue.python",
+            "description": "Example description: short note on what this layer does",
+            "author": {
+                "name": "Dirk van Nunen",
+                "email": "d.j.v.nunen@tue.nl"
+            },
+            "network": {},
+            "platform_version": "2",
+            "build_parameters": {
+                "exampleParameter": {
+                    "description": "This parameter is included as an example. You can remove it, if you remove it from the install.ps1 file as well",
+                    "enum": [
+                        "Value 1",
+                        "Value 2"
+                    ],
+                    "default": "Value 1"
+                }
+            }
+        }
+    ],
+    "build_parameters": {
+        "com.schoolyear.avd": {
+            "environment": {
+                "value": "Production"
+            }
+        },
+        "nl.tue.python": {
+            "exampleParameter": {
+                "value": "Value 1"
+            }
+        }
+    }
+}
