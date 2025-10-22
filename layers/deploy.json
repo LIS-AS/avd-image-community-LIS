@@ -10,7 +10,7 @@
                 }
             },
             "location": "germanywestcentral",
-            "name": "python-2025-10-14_15-36-59",
+            "name": "python-2025-10-22_11-45-30",
             "properties": {
                 "autoRun": {
                     "state": "Enabled"
@@ -38,12 +38,12 @@
                             "}",
                             "$accessToken = $response.access_token",
                             "$headers = @{'Authorization' = \"Bearer $accessToken\"; 'x-ms-version' = \"2020-04-08\"}",
-                            "Write-Host \"Downloading bundle, from: https://stschoolyearimageres002.blob.core.windows.net/cr-tueschoolyear-prd-002/bundle-47f9255507a432dcec0fdb4c9f380e6e4e5116ec981c618fc99d636aa7d9ea11.zip to: C:\\image_bundle.zip\"",
+                            "Write-Host \"Downloading bundle, from: https://stschoolyearimageres002.blob.core.windows.net/cr-tueschoolyear-prd-002/bundle-2d13634c6042684fe7cf96b198a321870abf77917326ed5333646a8636e89aa3.zip to: C:\\image_bundle.zip\"",
                             "$retryCount = 0",
                             "while ($retryCount -lt $maxRetries) {",
                             "\t$retryCount++",
                             "\ttry {",
-                            "\t\tInvoke-WebRequest -Uri 'https://stschoolyearimageres002.blob.core.windows.net/cr-tueschoolyear-prd-002/bundle-47f9255507a432dcec0fdb4c9f380e6e4e5116ec981c618fc99d636aa7d9ea11.zip' -Headers $headers -OutFile 'C:\\image_bundle.zip'",
+                            "\t\tInvoke-WebRequest -Uri 'https://stschoolyearimageres002.blob.core.windows.net/cr-tueschoolyear-prd-002/bundle-2d13634c6042684fe7cf96b198a321870abf77917326ed5333646a8636e89aa3.zip' -Headers $headers -OutFile 'C:\\image_bundle.zip'",
                             "\t\tbreak",
                             "\t} catch {",
                             "\t\tif ($retryCount -ge $maxRetries) { Write-Error \"An error occured during bundle download (after $maxRetries attempts): $_\" }",
@@ -98,7 +98,7 @@
                 "distribute": [
                     {
                         "artifactTags": {
-                            "SY_BUNDLE_URL": "https://stschoolyearimageres002.blob.core.windows.net/cr-tueschoolyear-prd-002/bundle-python-2025-10-14_15-36-29.json"
+                            "SY_BUNDLE_URL": "https://stschoolyearimageres002.blob.core.windows.net/cr-tueschoolyear-prd-002/bundle-python-2025-10-22_11-45-04.json"
                         },
                         "excludeFromLatest": false,
                         "galleryImageId": "/subscriptions/b0604914-cd2c-4ac9-91bf-c25b32fd0892/resourceGroups/rg-tueschoolyear-imagebuilding-prd-002/providers/Microsoft.Compute/galleries/igtueschoolyearprd002/images/python",
