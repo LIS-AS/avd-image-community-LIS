@@ -139,5 +139,5 @@ if ($currentPath -notmatch [regex]::Escape($folderToAdd)) {
 #start VSCode to make sure all extentions are loaded and ready for use.
 Start-Process -FilePath C:\VSCode\Code.exe
 Start-Sleep 10
-#and make sure the Schoolyear browser is on top again.
-#Start-Process -FilePath "C:\Program Files\Schoolyear\Schoolyear Browser\shell\Schoolyear Exams.exe" -ArgumentList "--browser"
+Stop-Process -Name 'Code'
+
