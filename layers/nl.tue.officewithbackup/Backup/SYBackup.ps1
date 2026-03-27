@@ -6,7 +6,7 @@
     # Change the variabeles $storage_account_azure, $password_azure_share, $user_azure_share, $backup_share_examen_azure
     # You can find this info at the "Connect" button of the fileshare in Azure under "Show script"
     $storage_account_azure = "schoolyearpublic.file.core.windows.net"
-    $password_azure_share = "***"
+    $password_azure_share = ""
     $user_azure_share = "localhost\schoolyearpublic"
     $backup_share_examen_azure = "\\schoolyearpublic.file.core.windows.net\sybackupfiles" 
     $user = (gci -Path C:\Users | sort -Descending LastWriteTime | select name | select -first 1).Name
