@@ -1,10 +1,10 @@
 {
   version: "v2.1",
-  name: "com.example.imagename",
+  name: "nl.tue.python",
   description: "Example description: short note on what this layer does",
   author: {
-    name: "John Doe (example org)",
-    email: "j.doe@example.com"
+    name: "Dirk van Nunen",
+    email: "d.j.v.nunen@tue.nl"
   },
   platform_version: "2",
   network: {
@@ -15,7 +15,10 @@
     http_proxy_whitelist: [
       // 'example.com:443', // (port 443 is HTTPS)
       // '*.example.com:*', // (allow any port)
-	  'reference.wolfram.com:*',
+	  // "files.pythonhosted.org:443",
+      // "pythonhosted.org:443",
+      // "pypi.python.org:443",
+      // "pypi.org:443",
     ],
   },
   build_parameters: {

@@ -10,8 +10,8 @@
 # </CAN BE REMOVED>
 
 Param (
-    [Parameter(Mandatory = $true)]
-    [string]$exampleParameter,                  # You can configure your own paramter in the properties.json5 file
+    # [Parameter(Mandatory = $true)]
+    # [string]$exampleParameter,                  # You can configure your own paramter in the properties.json5 file
 
     [Parameter(ValueFromRemainingArguments)]
     [string[]]$RemainingArgs                    # To make sure this script doesn't break when new parameters are added
@@ -42,22 +42,26 @@ $ProgressPreference = 'SilentlyContinue'
 # New-NetFirewallDynamicKeywordAddress -Id "{any-unique-guid}" -Keyword "example.com" -AutoResolve $true
 # New-NetFirewallRule -DisplayName "Allow All Outbound to example.com" -Direction Outbound -Action Allow -RemoteDynamicKeywordAddresses (Get-NetFirewallDynamicKeywordAddress -Keyword "example.com").ID
 
-# Run the installer silently with logging
-Start-Process -FilePath ".\mathematica_resources\setup.exe" -ArgumentList '/silent','/suppressmsgboxes','/log="C:\Windows\Temp\install.log"' -Wait
+Write-Host "=== Install Python ==="
+& .\install_scripts\python_installation.ps1
+Write-Host "=== Done with Python installation ==="
 
-# Create the licensing directory (creates parent folders if needed)
-New-Item -ItemType Directory -Path "C:\ProgramData\Wolfram\Licensing" -Force
+Write-Host "=== Install Python packages==="
+& .\install_scripts\python_post_installation.ps1
+Write-Host "=== Done with Python packages installation ==="
 
-# Copy the mathpass file
-Copy-Item -Path ".\mathematica_resources\mathpass" -Destination "C:\ProgramData\Wolfram\Licensing\mathpass" -Force
+Write-Host "=== Install VSCode ==="
+& .\install_scripts\vscode_installation.ps1 -RemoveInstaller
+Write-Host "=== Done with VSCode installation ==="
 
-# Copy init.m to a location where it can be picked-up by the user script.
-New-Item -ItemType Directory -Path "C:\temp" -Force
-Copy-Item -Path ".\init.m" -Destination "C:\temp\init.m" -Force
+Write-Host "=== Install VSCode extensions ==="
+& .\install_scripts\install_extensions_vscode.ps1
+Write-Host "=== Done with VSCode extensions installation ==="
 
-# Install helpfiles (11Gb diskspace is needed for this)
-# Start-Process -FilePath ".\mathematica_resources\Wolfram_App_14.3_and_English_Documentation\M-WIN-Documentation.en-us-14.3.0-11908168.msi" -ArgumentList '/quiet' -Wait
+Write-Host "=== Install file associoations and Python icon==="
+& .\install_scripts\file_associations_and_python_icon.ps1
+Write-Host "=== Done with file associoations and Python icon installation ==="
 
-# remove install files to save diskspace
-Remove-Item ".\mathematica_resources" -Force -Recurse
-
+Write-Host "=== Install pinToTaskbar tool ==="
+& .\install_scripts\install_tool_pinToTaskbar.ps1
+Write-Host "=== Done with pinToTaskbar tool installation ==="
