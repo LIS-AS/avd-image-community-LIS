@@ -1,6 +1,10 @@
 .idea
 bundle.json
 bundle.zip
+<<<<<<< HEAD
 deploy.json
 layers/nl.tue.matlab/matlab_resources/MathWorks/
 layers/nl.tue.mathematica/mathematica_resources/
+=======
+deploy.json
+>>>>>>> 8660182b3ef6a390510a9bbc6c231d04bbedb4a3
