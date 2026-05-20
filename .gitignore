@@ -1,4 +1,5 @@
 .idea
+.gitignore
 bundle.json
 bundle.zip
 <<<<<<< HEAD
