@@ -114,6 +114,7 @@
 
     "Write-Host \"[LanguageSupport] All pre-customization scripts completed successfully\""
   ],
+  validExitCodes: [0, 2],
   system: true,
   elevated: true
 }
