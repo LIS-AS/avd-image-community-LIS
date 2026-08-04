@@ -13,8 +13,9 @@
     //
     // list of whitelisted hostname:port combinations. Supports * wildcards
     http_proxy_whitelist: [
-      "login.mathworks.com:*",
-	  "licensing.mathworks.com:*",
+    "login.mathworks.com:*",
+	  "signin.mathworks.com:*",
+    "licensing.mathworks.com:*",
 	  "servcies.mathworks.com:*",
 	  "sts.windows.net:*",
 	  "www.mathworks.com:*",

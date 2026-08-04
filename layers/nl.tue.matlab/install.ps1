@@ -42,7 +42,10 @@ $ProgressPreference = 'SilentlyContinue'
 # New-NetFirewallDynamicKeywordAddress -Id "{any-unique-guid}" -Keyword "example.com" -AutoResolve $true
 # New-NetFirewallRule -DisplayName "Allow All Outbound to example.com" -Direction Outbound -Action Allow -RemoteDynamicKeywordAddresses (Get-NetFirewallDynamicKeywordAddress -Keyword "example.com").ID
 
+# Copy Tools folder to C:\
+Copy-Item -Path .\matlab_resources\Tools -Destination C:\ -recurse
+
 # Start installation of Matlab
-Start-Process -FilePath .\matlab_resources\MathWorks\R2025b\bin\win64\MathWorksProductInstaller.exe -ArgumentList "-inputFile .\matlab_resources\MathWorks\R2025b\installer_input.txt" -Wait -NoNewWindow
+Start-Process -FilePath .\matlab_resources\MathWorks\bin\win64\MathWorksProductInstaller.exe -ArgumentList "-inputFile .\matlab_resources\installer_input.txt" -Wait -NoNewWindow
 
 # Wait till installation is ready...

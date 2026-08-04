@@ -16,13 +16,13 @@
   build_parameters: {
     rVersion: {
       description: "Select the version of R to install",
-      enum: ["4.5.1"],
-      default: "4.5.1"
+      enum: ["4.6.1","4.5.1"],
+      default: "4.6.1"
     },
     rStudioVersion: {
       description: "Select the version of R-Studio to install",
-      enum: ["2025.05.1-513"],
-      default: "2025.05.1-513"
+      enum: ["2026.07.1-147","2025.05.1-513"],
+      default: "2026.07.1-147"
     }
   }
 }
