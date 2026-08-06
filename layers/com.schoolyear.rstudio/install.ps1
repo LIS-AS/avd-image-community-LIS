@@ -22,13 +22,6 @@ Write-Host "=== File association ==="
 & .\install_scripts\file_associations.ps1
 Write-Host "=== Done with file association ==="
 
-<<<<<<< HEAD
-Write-Host "=== Install PinToTaskbar tool ==="
-& .\install_scripts\install_tool_pinToTaskbar.ps1
-Write-Host "=== Done with PinToTaskbar tool installation ==="
-
-=======
 Write-Host "=== Configure taskbar layout ==="
 & .\install_scripts\configure_taskbar_layout.ps1
 Write-Host "=== Done with taskbar layout ==="
->>>>>>> upstream/main

@@ -18,12 +18,15 @@ $packages = @(
 # Uncomment to install additional packages.
 #  "pandas",
 #  "vpython",
-#  "ipykernel"
-#  "numpy",
-#  "matplotlib",
+"ipykernel"
+"numpy",
+"matplotlib",
 #  "requests",
 #  "flask",
-#  "django"
+#  "django",
+"scipy",
+"sympy",
+"pyqint"
 )
 
 foreach ($package in $packages) {

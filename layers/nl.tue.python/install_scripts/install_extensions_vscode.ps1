@@ -4,11 +4,11 @@ $extensions = @(
   "ms-python.python",
   "ms-python.vscode-pylance",
   # Uncomment to install Jupyter extensions.
-  # "ms-toolsai.jupyter",
-  # "ms-toolsai.vscode-jupyter-cell-tags",
-  # "ms-toolsai.jupyter-keymap",
-  # "ms-toolsai.jupyter-renderers",
-  # "ms-toolsai.vscode-jupyter-slideshow",
+  "ms-toolsai.jupyter",
+  "ms-toolsai.vscode-jupyter-cell-tags",
+  "ms-toolsai.jupyter-keymap",
+  "ms-toolsai.jupyter-renderers",
+  "ms-toolsai.vscode-jupyter-slideshow",
   "tankashing.blinds-theme"
 )
 
