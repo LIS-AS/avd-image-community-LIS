@@ -9,13 +9,6 @@
 # If you want to persist a file in the image, you must copy it to another folder
 # </CAN BE REMOVED>
 
-Param (
-    [Parameter(Mandatory = $true)]
-    [string]$exampleParameter,                  # You can configure your own paramter in the properties.json5 file
-
-    [Parameter(ValueFromRemainingArguments)]
-    [string[]]$RemainingArgs                    # To make sure this script doesn't break when new parameters are added
-)
 
 # Recommended snippet to make sure PowerShell stops execution on failure
 # https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.5#erroractionpreference
@@ -43,7 +36,7 @@ $ProgressPreference = 'SilentlyContinue'
 # New-NetFirewallRule -DisplayName "Allow All Outbound to example.com" -Direction Outbound -Action Allow -RemoteDynamicKeywordAddresses (Get-NetFirewallDynamicKeywordAddress -Keyword "example.com").ID
 
 # Run the installer silently with logging
-Start-Process -FilePath ".\mathematica_resources\setup.exe" -ArgumentList '/silent','/suppressmsgboxes','/log="C:\Windows\Temp\install.log"' -Wait
+Start-Process -FilePath ".\mathematica_resources\setup.exe" -ArgumentList '/NORESTART','/SILENT','/SUPPRESSMSGBOXES','/LOG="C:\Windows\Temp\install.log"' -Wait
 
 # Create the licensing directory (creates parent folders if needed)
 New-Item -ItemType Directory -Path "C:\ProgramData\Wolfram\Licensing" -Force
@@ -53,7 +46,7 @@ Copy-Item -Path ".\mathematica_resources\mathpass" -Destination "C:\ProgramData\
 
 # Copy init.m to a location where it can be picked-up by the user script.
 New-Item -ItemType Directory -Path "C:\temp" -Force
-Copy-Item -Path ".\init.m" -Destination "C:\temp\init.m" -Force
+Copy-Item -Path ".\mathematica_resources\init.m" -Destination "C:\temp\init.m" -Force
 
 # Install helpfiles (11Gb diskspace is needed for this)
 # Start-Process -FilePath ".\mathematica_resources\Wolfram_App_14.3_and_English_Documentation\M-WIN-Documentation.en-us-14.3.0-11908168.msi" -ArgumentList '/quiet' -Wait

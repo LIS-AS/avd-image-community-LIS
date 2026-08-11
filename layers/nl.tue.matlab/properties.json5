@@ -18,7 +18,7 @@
     "licensing.mathworks.com:*",
 	  "servcies.mathworks.com:*",
 	  "sts.windows.net:*",
-	  "www.mathworks.com:*",
+	  // "www.mathworks.com:*",
 	  "engine.surfconext.nl:*"
     ],
   },
