@@ -18,19 +18,8 @@
     "licensing.mathworks.com:*",
 	  "servcies.mathworks.com:*",
 	  "sts.windows.net:*",
-	  // "www.mathworks.com:*",
+	  "www.mathworks.com:*",
 	  "engine.surfconext.nl:*"
     ],
   },
-  build_parameters: {
-    exampleParameter: {
-      description: "This parameter is included as an example. You can remove it, if you remove it from the install.ps1 file as well",
-      // the enum & default fields are optional
-      enum: [
-        "Value 1",
-        "Value 2",
-      ],
-      default: "Value 1"
-    },
-  }
 }

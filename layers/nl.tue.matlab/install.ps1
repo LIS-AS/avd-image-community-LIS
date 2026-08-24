@@ -9,13 +9,6 @@
 # If you want to persist a file in the image, you must copy it to another folder
 # </CAN BE REMOVED>
 
-Param (
-    [Parameter(Mandatory = $true)]
-    [string]$exampleParameter,                  # You can configure your own paramter in the properties.json5 file
-
-    [Parameter(ValueFromRemainingArguments)]
-    [string[]]$RemainingArgs                    # To make sure this script doesn't break when new parameters are added
-)
 
 # Recommended snippet to make sure PowerShell stops execution on failure
 # https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.5#erroractionpreference
@@ -47,5 +40,17 @@ Copy-Item -Path .\matlab_resources\Tools -Destination C:\ -recurse
 
 # Start installation of Matlab
 Start-Process -FilePath .\matlab_resources\MathWorks\bin\win64\MathWorksProductInstaller.exe -ArgumentList "-inputFile .\matlab_resources\installer_input.txt" -Wait -NoNewWindow
-
 # Wait till installation is ready...
+
+# Block Edge to https://www.mathworks.com/matlabcentral
+$registryPath = "HKLM:\SOFTWARE\Policies\Microsoft\Edge\URLBlocklist"
+$Name = "1"
+$value = "https://www.mathworks.com/matlabcentral"
+New-Item -Path $registryPath -Force | Out-Null
+New-ItemProperty -Path $registryPath -Name $name -Value $value -PropertyType String -Force | Out-Null
+
+# Create scheduled task to warm up Matlab on user login. This reduces the time it takes for the application to start on first use by students.
+$action = New-ScheduledTaskAction -Execute 'Powershell.exe' -Argument "C:\Tools\WarmUpMatlab.ps1"
+$trigger = New-ScheduledTaskTrigger -AtLogOn
+$principal = New-ScheduledTaskPrincipal -GroupId "Users" -RunLevel Limited
+Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "Warmup ML" -Principal $principal -Description "Warming up Matlab" 

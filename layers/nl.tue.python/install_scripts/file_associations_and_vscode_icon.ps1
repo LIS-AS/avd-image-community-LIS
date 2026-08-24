@@ -31,6 +31,7 @@ New-Item -Path "$registryKey\.pyw" -Force | Out-Null
 New-Item -Path "$registryKey\.pyz" -Force | Out-Null
 New-Item -Path "$registryKey\.pyzw" -Force | Out-Null
 New-Item -Path "$registryKey\.ipynb" -Force | Out-Null
+New-Item -Path "$registryKey\.dfy" -Force | Out-Null
 New-ItemProperty -Path "$registryKey\.py" -Name "(Default)" -Value "Python.File" -PropertyType String -Force | Out-Null
 New-ItemProperty -Path "$registryKey\.python" -Name "(Default)" -Value "Python.File" -PropertyType String -Force | Out-Null
 New-ItemProperty -Path "$registryKey\.pyc" -Name "(Default)" -Value "Python.File" -PropertyType String -Force | Out-Null
@@ -40,6 +41,7 @@ New-ItemProperty -Path "$registryKey\.pyw" -Name "(Default)" -Value "Python.File
 New-ItemProperty -Path "$registryKey\.pyz" -Name "(Default)" -Value "Python.File" -PropertyType String -Force | Out-Null
 New-ItemProperty -Path "$registryKey\.pyzw" -Name "(Default)" -Value "Python.File" -PropertyType String -Force | Out-Null
 New-ItemProperty -Path "$registryKey\.ipynb" -Name "(Default)" -Value "Python.File" -PropertyType String -Force | Out-Null
+New-ItemProperty -Path "$registryKey\.dfy" -Name "(Default)" -Value "Python.File" -PropertyType String -Force | Out-Null
 New-Item -Path "$registryKey\Python.File" -Force | Out-Null
 New-ItemProperty -Path "$registryKey\Python.File" -Name "(Default)" -Value "Python File" -PropertyType String -Force | Out-Null
 New-Item -Path "$registryKey\Python.File\shell\open\command" -Force | Out-Null

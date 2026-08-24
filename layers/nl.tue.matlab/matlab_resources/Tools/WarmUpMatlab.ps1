@@ -1,12 +1,7 @@
-# This script is executed on each sessionhost during deployment
-# Note that any time spent in this script adds to the deployment time of each VM (and thus the deployment time of exams)
-
-$ErrorActionPreference = "Stop"
-Set-StrictMode -Version Latest
-
+# matlab warmup, no logon is asked during first start of Matlab
 $scriptLogPrefix = "Matlab warm-up"
 $applicationPath = "C:\Program Files\MATLAB\R2026a\bin\matlab.exe"
-$warmupSeconds = 300
+$warmupSeconds = 120
 $processName = "matlab"
 $processDetectionSeconds = 0
 
