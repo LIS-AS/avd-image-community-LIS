@@ -9,7 +9,7 @@ $extensions = @(
   "ms-toolsai.jupyter-keymap",
   "ms-toolsai.jupyter-renderers",
   "ms-toolsai.vscode-jupyter-slideshow",
-  "dafny-lang.ide-vscode",
+  # "dafny-lang.ide-vscode",
   "tankashing.blinds-theme"
 )
 
