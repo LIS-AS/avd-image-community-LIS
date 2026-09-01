@@ -16,17 +16,18 @@ Write-Host "${scriptLogPrefix}: Installing packages one by one"
 
 $packages = @(
 # Uncomment to install additional packages.
-#  "pandas",
-#  "vpython",
-"ipykernel"
+"ipykernel",
 "numpy",
 "matplotlib",
-#  "requests",
-#  "flask",
-#  "django",
 "scipy",
 "sympy",
-"pyqint"
+"pyqint",
+"pandas",
+"vpython",
+"openpyxl",
+"scikit-learn",
+"datetime",
+"tk"
 )
 
 foreach ($package in $packages) {
