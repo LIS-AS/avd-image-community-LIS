@@ -16,10 +16,14 @@
     "login.mathworks.com:*",
 	  "signin.mathworks.com:*",
     "licensing.mathworks.com:*",
-	  "servcies.mathworks.com:*",
-	  "sts.windows.net:*",
+	  "services.mathworks.com:*",
 	  "www.mathworks.com:*",
-	  "engine.surfconext.nl:*"
+    "login.microsoftonline.com:*",
+    "aadcdn.msauth.net:*",
+    "aadcdn.msauthimages.net:*",
+    "autologon.microsoftazuread-sso.com:*",
+	  "sts.windows.net:*"
+	  //"engine.surfconext.nl:*"
     ],
   },
 }
