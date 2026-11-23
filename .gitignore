@@ -5,3 +5,4 @@ bundle.zip
 deploy.json
 layers/nl.tue.matlab/matlab_resources/MathWorks/
 layers/nl.tue.mathematica/mathematica_resources/
+layers/nl.tue.netbeans/Netbeans_Sources/
